@@ -30,4 +30,8 @@ public class Produto {
     public int getEstoque() {
         return estoque;
     }
+
+    public static int getTotalProdutos() {
+        return totalProdutos;
+    }
 }
