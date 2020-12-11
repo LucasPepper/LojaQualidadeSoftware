@@ -9,28 +9,18 @@ import java.util.Stack;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PagamentoTest {
+public class PagamentoVistaTest {
 
     Produto desodorante = new Produto("Desodorante", 20, 150.00);
     HashMap<Produto, Integer> mapaVendaProdutoQuantidade = new HashMap<>();
-    HashMap<Produto, Integer> mapaVendaProdutoQuantidade2 = new HashMap<>();
 
     @Test
-    void testCalcularValorVista() {
+    public void testCalcularValorVista() {
         mapaVendaProdutoQuantidade.put(desodorante, 10);
         Venda venda = new Venda(mapaVendaProdutoQuantidade);
-        Pagamento pagamentoVista = new Pagamento(venda);
+        PagamentoVista pagamentoVista = new PagamentoVista(venda);
         double valorAVista = pagamentoVista.calcularValorVista();
         assertEquals(1350, valorAVista);
-
     }
 
-    @Test
-    void testCalcularValorParcelas() {
-        mapaVendaProdutoQuantidade2.put(desodorante, 10);
-        Venda venda2 = new Venda(mapaVendaProdutoQuantidade2);
-        Pagamento pagamentoParcelado =  new Pagamento(venda2, 2);
-        double valorParcelas = pagamentoParcelado.calcularValorParcelas();
-        assertEquals(750, valorParcelas);
-    }
 }

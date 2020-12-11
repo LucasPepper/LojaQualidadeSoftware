@@ -1,6 +1,4 @@
-import br.edu.ifnmg.loja.entidade.Pagamento;
-import br.edu.ifnmg.loja.entidade.Produto;
-import br.edu.ifnmg.loja.entidade.Venda;
+import br.edu.ifnmg.loja.entidade.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -77,8 +75,8 @@ public class Main {
 
             // À Vista
             if (escolhaPagamento == 1) {
-                Pagamento pagamento = new Pagamento(venda);
-                System.out.printf("Valor da compra à vista: R$ %.2f%n", pagamento.calcularValorVista());
+                PagamentoVista pagamentoVista = new PagamentoVista(venda);
+                System.out.printf("Valor da compra à vista: R$ %.2f%n", pagamentoVista.calcularValorVista());
 
             } else if (escolhaPagamento == 2) {
                 // Parcelamento
@@ -89,10 +87,10 @@ public class Main {
                     System.out.println("Somente vendas acima de R$ 1000,00 podem ser parceladas em mais de 5 vezes");
                     System.out.println("Digite o número de parcelas: ");
                     numeroParcelas = Integer.parseInt(scanner.nextLine());
-                    Pagamento pagamento = new Pagamento(venda, numeroParcelas);
+                    PagamentoPrazo pagamentoPrazo = new PagamentoPrazo(venda, numeroParcelas);
                     try {
                         System.out.printf("Sua compra foi parcelada em %d vezes de R$%.2f%n",
-                                numeroParcelas, pagamento.calcularValorParcelas());
+                                numeroParcelas, pagamentoPrazo.calcularValorParcelas());
                         parcelamentoSucesso = true;
                     } catch (IllegalArgumentException illegalArgumentException) {
                         System.out.println(illegalArgumentException.getMessage());

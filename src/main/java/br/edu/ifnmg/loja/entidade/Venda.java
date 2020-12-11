@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Venda {
-    private HashMap<Produto, Integer> mapaProdutoQuantidade;
+    private final HashMap<Produto, Integer> mapaProdutoQuantidade;
 
     public Venda(HashMap<Produto, Integer> mapaProdutoQuantidade){
         this.mapaProdutoQuantidade = mapaProdutoQuantidade;
@@ -43,9 +43,7 @@ public class Venda {
         double valorTotal = 0;
         // Iterador para o HashMap dos itens da venda
         for (Map.Entry<Produto, Integer> entry : this.mapaProdutoQuantidade.entrySet()) {
-            System.out.printf("Preço = %.2f, Quant = %d%n", entry.getKey().getPreco(), entry.getValue());
             valorTotal += entry.getKey().getPreco() * entry.getValue();
-
         }
 
         return valorTotal;

@@ -1,10 +1,10 @@
 package br.edu.ifnmg.loja.entidade;
 
 public class Produto {
-    private int id;
-    private String descricao;
-    private int estoque;
-    private double preco;
+    private final int id;
+    private final String descricao;
+    private final int estoque;
+    private final double preco;
     private static int totalProdutos = 0;
 
     public Produto(String descricao, int estoque, double preco){
