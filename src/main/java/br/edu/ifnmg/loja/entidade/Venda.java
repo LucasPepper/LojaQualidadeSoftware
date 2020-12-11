@@ -11,7 +11,6 @@ public class Venda {
         this.validarCodigoProduto();
         this.validarQuantidade();
         this.verificarEstoque();
-
     }
 
     private void validarQuantidade() {
@@ -39,15 +38,14 @@ public class Venda {
         }
     }
 
-    // TODO: Teste unitário
     public double calcularValorVenda(){
+
         double valorTotal = 0;
-        // Iterador para o HashMap dos itens da venda.
-        for (Map.Entry<Produto, Integer> entry : mapaProdutoQuantidade.entrySet()) {
-            /* System.out.println("Key = " + entry.getKey().getDescricao() +
-                    ", Value = " + entry.getValue());
-            */
+        // Iterador para o HashMap dos itens da venda
+        for (Map.Entry<Produto, Integer> entry : this.mapaProdutoQuantidade.entrySet()) {
+            System.out.printf("Preço = %.2f, Quant = %d%n", entry.getKey().getPreco(), entry.getValue());
             valorTotal += entry.getKey().getPreco() * entry.getValue();
+
         }
 
         return valorTotal;

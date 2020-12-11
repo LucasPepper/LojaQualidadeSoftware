@@ -75,12 +75,13 @@ public class Main {
             int numeroParcelas;
             boolean parcelamentoSucesso;
 
+            // À Vista
             if (escolhaPagamento == 1) {
                 Pagamento pagamento = new Pagamento(venda);
                 System.out.printf("Valor da compra à vista: R$ %.2f%n", pagamento.calcularValorVista());
 
             } else if (escolhaPagamento == 2) {
-                // Parcelar
+                // Parcelamento
                 do {
                     System.out.println("REGRAS DE PARCELAMENTO");
                     System.out.println("Mínimo 1, Máximo 10");
