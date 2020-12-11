@@ -16,7 +16,7 @@ class PagamentoTest {
     HashMap<Produto, Integer> mapaVendaProdutoQuantidade2 = new HashMap<>();
 
     @Test
-    void calcularValorVista() {
+    void testCalcularValorVista() {
         mapaVendaProdutoQuantidade.put(desodorante, 10);
         Venda venda = new Venda(mapaVendaProdutoQuantidade);
         Pagamento pagamentoVista = new Pagamento(venda);
@@ -26,7 +26,7 @@ class PagamentoTest {
     }
 
     @Test
-    void calcularValorParcelas() {
+    void testCalcularValorParcelas() {
         mapaVendaProdutoQuantidade2.put(desodorante, 10);
         Venda venda2 = new Venda(mapaVendaProdutoQuantidade2);
         Pagamento pagamentoParcelado =  new Pagamento(venda2, 2);
