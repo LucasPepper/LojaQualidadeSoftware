@@ -2,6 +2,7 @@ import br.edu.ifnmg.loja.entidade.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -32,10 +33,6 @@ public class Main {
 
                 try {
                     if (indiceProdutoEscolhido != 0) {
-                        /* TODO: Teste unitário
-                        System.out.printf("Você escolheu %s%n ",
-                                listaProdutos.get(indiceProdutoEscolhido - 1).getDescricao());
-                         */
                         System.out.printf("Digite a quantidade (Estoque = %d):",
                                 listaProdutos.get(indiceProdutoEscolhido - 1).getEstoque());
                         quantidadeProdutoEscolhido = Integer.parseInt(scanner.nextLine());
